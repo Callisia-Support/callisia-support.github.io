@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,5 +11,33 @@
 </head>
 <body>
     <p>Redirecting...</p>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Callisia Support - Redirecting...</title>
+    <script>
+        // 1. Detecta o idioma do usuário
+        const userLang = navigator.language || navigator.userLanguage;
+        const targetLang = userLang.toLowerCase().startsWith('pt') ? 'pt' : 'en';
+
+        // 2. Verifica se há um pedido específico na URL (ex: ?doc=privacy)
+        const urlParams = new URLSearchParams(window.location.search);
+        const docType = urlParams.get('doc');
+
+        // 3. Redireciona para o lugar certo
+        if (docType === 'privacy') {
+            window.location.replace(`privacy-policy/${targetLang}/`);
+        } else {
+            // Se não tiver parâmetro, o padrão é ir para os Termos
+            window.location.replace(`terms-of-service/${targetLang}/`);
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting to the correct document...</p>
 </body>
 </html>
