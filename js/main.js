@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const currentPath = window.location.pathname;
-  const repoName = "/callisia"; // 
+  const repoName = "";
 
   const currentLang = currentPath.includes('/pt/') ? 'pt' : 'en';
 
